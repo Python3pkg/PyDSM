@@ -27,6 +27,7 @@ from ..interface import greater_equals
 from ..interface import variable
 from ..arrays import cvxpy_var
 from ..arrays import cvxpy_array
+from functools import reduce
 
 # Function: expand
 def expand(arg):

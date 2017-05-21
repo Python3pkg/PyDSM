@@ -18,13 +18,13 @@
 # You should have received a copy of the GNU General Public License
 # along with PyDSM.  If not, see <http://www.gnu.org/licenses/>.
 
-u"""Demo for DS modulator with assigned reconstruction filter.
+"""Demo for DS modulator with assigned reconstruction filter.
 
 Copyright © 2013 Sergio Callegari, Federico Bizzarri
 All rights reserved.
 """
 
-from __future__ import division, print_function
+
 
 import numpy as np
 from scipy.signal import butter

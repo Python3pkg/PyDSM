@@ -40,7 +40,7 @@ Functions
    shiftdim  -- Shift dimensions a la Matlab
 """
 
-from __future__ import division, print_function
+
 
 import numpy as np
 
@@ -182,7 +182,7 @@ def shiftdim(x, n=None, nargout=2):
         if n <= m:
             x = x.reshape(s[n:])
         else:
-            x = x.transpose(np.roll(range(x.ndim), -n))
+            x = x.transpose(np.roll(list(range(x.ndim)), -n))
     elif n < 0:
             x = x.reshape((1,)*(-n)+x.shape)
     return (x, n)[outsel]

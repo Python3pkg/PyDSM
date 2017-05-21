@@ -38,7 +38,7 @@ Functions
     raw_xcorr  -- raw crosscorrelation of a vector
 """
 
-from __future__ import division, print_function
+
 
 import numpy as np
 

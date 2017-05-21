@@ -18,7 +18,7 @@
 # You should have received a copy of the GNU General Public License
 # along with PyDSM.  If not, see <http://www.gnu.org/licenses/>.
 
-from __future__ import division, print_function
+
 
 import numpy as np
 from warnings import warn
@@ -30,7 +30,7 @@ __all__ = ['ntf_fir_minmax', 'synthesize_ntf_minmax']
 
 def ntf_fir_minmax(order=32, osr=32, H_inf=1.5, f0=0, zf=False,
                    **options):
-    u"""
+    """
     Synthesize FIR NTF for LP or BP ΔΣ modulator by min-max optimization.
 
     The strategy aims at minimizing the peak value of the NTF in the signal

@@ -18,7 +18,7 @@
 # You should have received a copy of the GNU General Public License
 # along with PyDSM.  If not, see <http://www.gnu.org/licenses/>.
 
-u"""
+"""
 Output filter based NTF synthesis (:mod:`pydsm.NTFDesign.filter_based`)
 =======================================================================
 
@@ -45,7 +45,7 @@ Deprecated functions
    synthesize_ntf_from_filter -- Alternate compute FIR NTF from output filter
 """
 
-from __future__ import division, print_function
+
 
 from .merit_factors import quantization_noise_gain as _quantization_noise_gain
 from .legacy import (quantization_noise_gain_by_conv as
@@ -218,7 +218,7 @@ q0_from_filter.default_options = q0_weighting.default_options.copy()
 
 def synthesize_ntf_from_filter(order, H, H_type='zpk', H_inf=1.5,
                                normalize="auto", **options):
-    u"""Synthesize a FIR NTF based on the ΔΣM output filter.
+    """Synthesize a FIR NTF based on the ΔΣM output filter.
 
     The ΔΣ modulator NTF is designed after a specification of the
     filter in charge of removing the quantization noise

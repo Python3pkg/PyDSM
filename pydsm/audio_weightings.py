@@ -102,7 +102,7 @@ evaluation of the transfer function may require special care.
    Shaping," J. Audio Eng. Soc., Vol. 40 No. 7/8 1992 July/August
 """
 
-from __future__ import division, print_function
+
 
 import numpy as np
 

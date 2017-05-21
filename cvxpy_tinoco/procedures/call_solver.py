@@ -416,7 +416,7 @@ def construct_F(constr_list,mapping,n):
 
         # Case 2
         elif x is not None and z is None:
-            if all(list(map(lambda y: y(x),inds))):
+            if all(list([y(x) for y in inds])):
                 f = opt.matrix(0.0,(len(fs),1))
                 for i in range(0,len(fs),1):
                     f[i] = fs[i](x)

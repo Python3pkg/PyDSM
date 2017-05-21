@@ -18,7 +18,7 @@
 # You should have received a copy of the GNU General Public License
 # along with PyDSM.  If not, see <http://www.gnu.org/licenses/>.
 
-u"""
+"""
 Noise weighting NTF synthesis (:mod:`pydsm.NTFdesign.weighting`)
 ================================================================
 

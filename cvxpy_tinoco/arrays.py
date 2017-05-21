@@ -25,7 +25,7 @@ import sys
 if sys.version_info >= (3, 0):
     int_types = (int,)
 else:
-    int_types = (int, long)
+    int_types = (int, int)
 
 #***********************************************************************#
 # Class definition: cvxpy_array                                         #
@@ -163,14 +163,13 @@ class cvxpy_array(object):
                 sr[2] = key[1].step
                     
         # Check type
-        if not all(list(map(lambda x: (issubclass(type(x),int) or 
-                                       issubclass(type(x),np.integer)),
-                            [sl[0],sl[1],sl[2],sr[0],sr[1],sr[2]]))):
+        if not all(list([(issubclass(type(x),int) or 
+                                       issubclass(type(x),np.integer)) for x in [sl[0],sl[1],sl[2],sr[0],sr[1],sr[2]]])):
             raise TypeError('Invalid key')            
 
         # Calculate new size            
-        ll = range(sl[0],sl[1],sl[2])
-        lr = range(sr[0],sr[1],sr[2])
+        ll = list(range(sl[0],sl[1],sl[2]))
+        lr = list(range(sr[0],sr[1],sr[2]))
         new_m = len(ll)
         new_n = len(lr)
         
@@ -955,14 +954,13 @@ class cvxpy_sparray(object):
                 sr[2] = key[1].step
                     
         # Check type
-        if not all(list(map(lambda x: (issubclass(type(x),int) or 
-                                       issubclass(type(x),np.integer)),
-                            [sl[0],sl[1],sl[2],sr[0],sr[1],sr[2]]))):
+        if not all(list([(issubclass(type(x),int) or 
+                                       issubclass(type(x),np.integer)) for x in [sl[0],sl[1],sl[2],sr[0],sr[1],sr[2]]])):
             raise TypeError('Invalid key')            
 
         # Calculate new size            
-        ll = range(sl[0],sl[1],sl[2])
-        lr = range(sr[0],sr[1],sr[2])
+        ll = list(range(sl[0],sl[1],sl[2]))
+        lr = list(range(sr[0],sr[1],sr[2]))
         new_m = len(ll)
         new_n = len(lr)
         

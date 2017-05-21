@@ -54,7 +54,7 @@ Deprecated functions
    clans                   -- Alias for `ntf_clans`
 """
 
-from __future__ import division, print_function
+
 
 from ..delsig import (synthesizeNTF as ntf_schreier,
                       synthesizeChebyshevNTF as ntf_chebyshev,

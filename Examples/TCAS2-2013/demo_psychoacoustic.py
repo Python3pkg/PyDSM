@@ -18,13 +18,13 @@
 # You should have received a copy of the GNU General Public License
 # along with PyDSM.  If not, see <http://www.gnu.org/licenses/>.
 
-u"""Demo for LP DS modulator with psychoacoustic noise weighting.
+"""Demo for LP DS modulator with psychoacoustic noise weighting.
 
 Copyright © 2013 Sergio Callegari, Federico Bizzarri
 All rights reserved.
 """
 
-from __future__ import division, print_function
+
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -96,7 +96,7 @@ A = 0.01
 DT = 4*fphi/fsig
 
 # Setting up DS simulation
-tt = np.asarray(range(int(Tstop)))
+tt = np.asarray(list(range(int(Tstop))))
 uu = A*np.sin(2*np.pi*fsig/fphi*tt)
 dither = np.random.randn(len(uu))*dither_sigma
 uud = uu+dither

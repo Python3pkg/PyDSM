@@ -24,7 +24,7 @@ Copyright (c) Sergio Callegari, Federico Bizzarri 2013
 All rights reserved.
 """
 
-from __future__ import division, print_function
+
 
 import numpy as np
 import scipy as sp
@@ -121,7 +121,7 @@ Tstart = 40E3
 dither_sigma = 1e-6
 
 # Set up DSM simulation
-tt = np.asarray(range(int(Tstop)))
+tt = np.asarray(list(range(int(Tstop))))
 uu = A1*np.sin(2*np.pi*fsig1/fphi*tt)+A2*np.sin(2*np.pi*fsig2/fphi*tt)
 dither = np.random.randn(len(uu))*dither_sigma
 uud = uu+dither

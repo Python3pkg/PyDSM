@@ -33,7 +33,7 @@ The optimization is practiced in two steps:
 * Then the NTF zeros are optimized based on this cost function.
 """
 
-from __future__ import division, print_function
+
 
 import numpy as np
 from ...ft import idtft_hermitian
@@ -300,7 +300,7 @@ ntf_fir_from_q0.default_options = {"modeler": "cvxpy_old",
 
 def ntf_fir_weighting(order, w, H_inf=1.5,
                       normalize="auto", **options):
-    u"""Synthesize FIR NTF based on a noise weighting function or a filter.
+    """Synthesize FIR NTF based on a noise weighting function or a filter.
 
     The ΔΣ modulator NTF is designed after a noise weigthing function stating
     how expensive noise is at the various frequencies.
@@ -448,7 +448,7 @@ ntf_fir_weighting.default_options.update(ntf_fir_from_q0.default_options)
 
 def ntf_hybrid_weighting(order, w, H_inf=1.5, poles=[],
                          normalize="auto", **options):
-    u"""
+    """
     Synthesize NTF based on noise weighting function or filter plus poles.
 
     The ΔΣ modulator NTF is designed after a noise weigthing function stating

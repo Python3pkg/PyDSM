@@ -18,13 +18,13 @@
 # You should have received a copy of the GNU General Public License
 # along with PyDSM.  If not, see <http://www.gnu.org/licenses/>.
 
-u"""Demo for multiband DS modulator with brickwall filter.
+"""Demo for multiband DS modulator with brickwall filter.
 
 Copyright © 2013 Sergio Callegari, Federico Bizzarri
 All rights reserved.
 """
 
-from __future__ import division, print_function
+
 
 import numpy as np
 from pydsm.delsig import evalTF
@@ -52,7 +52,7 @@ def w1(f):
 
 print("... plotting filter magnitude response")
 ff = np.logspace(np.log10(0.5E-5), np.log10(0.5), 1024).reshape((-1, 1))
-vv = np.fromiter(map(w1, ff), np.double)
+vv = np.fromiter(list(map(w1, ff)), np.double)
 plt.figure()
 plt.plot(ff, vv)
 plt.xlim(1e-5, 1./2)

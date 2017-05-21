@@ -52,7 +52,7 @@ Collection of DELSIG style decibel routines
 ===========================================
 """
 
-from __future__ import division
+
 
 import numpy as np
 

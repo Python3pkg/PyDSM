@@ -37,7 +37,7 @@ All rights reserved.
 # but slightly blue (for some reason it gets more power at higher frequencies).
 
 
-from __future__ import division, print_function
+
 
 import numpy as np
 import scipy as sp
@@ -223,7 +223,7 @@ print("{:2.2f}dB\t{:2.2f}dB\t{:2.2f}dB\t{:2.2f}dB".format(
 # Repeating the tests in the time domain with the nonlinear modulator model
 # and the linearized motor model
 # Setting up DS simulation
-tt = np.asarray(range(int(Tstop)))
+tt = np.asarray(list(range(int(Tstop))))
 uu = A*np.sin(2*np.pi*fmot/fphi*tt)
 dither = np.random.randn(len(uu))*dither_sigma
 uud = uu+dither

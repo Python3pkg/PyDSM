@@ -18,13 +18,13 @@
 # You should have received a copy of the GNU General Public License
 # along with PyDSM.  If not, see <http://www.gnu.org/licenses/>.
 
-u"""Demo for LP DS modulator with low DC noise.
+"""Demo for LP DS modulator with low DC noise.
 
 Copyright © 2013 Sergio Callegari, Federico Bizzarri
 All rights reserved.
 """
 
-from __future__ import division, print_function
+
 
 import numpy as np
 from numpy.random import randn
@@ -70,9 +70,9 @@ fmin = 10**np.ceil(np.log10(B/OSR/100))
 fmax = fphi/2
 ff = np.logspace(np.log10(fmin), np.log10(fmax), 1000)
 
-resp_w1 = np.fromiter(map(w1, ff/fphi), np.double)
+resp_w1 = np.fromiter(list(map(w1, ff/fphi)), np.double)
 resp_ntf1 = np.abs(evalTF(ntf1, np.exp(1j*2*np.pi*ff/fphi)))
-resp_w2 = np.fromiter(map(w2, ff/fphi), np.double)
+resp_w2 = np.fromiter(list(map(w2, ff/fphi)), np.double)
 resp_ntf2 = np.abs(evalTF(ntf2, np.exp(1j*2*np.pi*ff/fphi)))
 
 ffa = np.logspace(np.log10(0.5E-5), np.log10(0.5), 1024)

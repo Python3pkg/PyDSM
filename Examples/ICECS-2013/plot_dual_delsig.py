@@ -32,7 +32,7 @@ Copyright (c) Sergio Callegari 2013.
 All rights reserved.
 """
 
-from __future__ import division, print_function
+
 
 import numpy as np
 from scipy import signal

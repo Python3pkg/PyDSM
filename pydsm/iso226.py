@@ -87,7 +87,7 @@ where the behavior found at 20 Hz is replicated.
    Shaping", J. Audio Eng. Soc., Vol. 40, N. 7/8, 1992 July/August
 """
 
-from __future__ import division, print_function
+
 
 import numpy as np
 from scipy.interpolate import InterpolatedUnivariateSpline

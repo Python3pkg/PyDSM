@@ -53,8 +53,7 @@ def norm1(X):
     z = variable(m,n)
     w = vstack([z])                 
     p = program(minimize(t),
-                list(map(lambda y: leq(sum(abs(y)),t),
-                    [w[:,j] for j in range(0,n)])),
+                list([leq(sum(abs(y)),t) for y in [w[:,j] for j in range(0,n)]]),
                 [z],
                 name='norm1')
     return p(X)

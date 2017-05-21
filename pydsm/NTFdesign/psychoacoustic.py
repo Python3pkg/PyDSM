@@ -18,7 +18,7 @@
 # You should have received a copy of the GNU General Public License
 # along with PyDSM.  If not, see <http://www.gnu.org/licenses/>.
 
-u"""
+"""
 Psychoacoustic NTF design (:mod:`pydsm.NTFdesign.psychoacoustic`)
 =================================================================
 
@@ -49,7 +49,7 @@ Deprecated functions
    synthesize_ntf_from_audio_weighting -- alias of ntf_fir_audio_weighting
 """
 
-from __future__ import division, print_function
+
 
 import numpy as np
 from .delsig import synthesizeNTF
@@ -58,6 +58,7 @@ from .. import audio_weightings
 from .weighting import ntf_fir_weighting
 from warnings import warn
 from ..exceptions import PyDsmDeprecationWarning
+import collections
 
 __all__ = ["dunn_optzeros", "dunn_optzeros_cplx", "synthesize_ntf_dunn",
            "synthesize_ntf_from_audio_weighting",
@@ -198,7 +199,7 @@ def ntf_fir_audio_weighting(
         max_attn=120,
         H_inf=1.5,
         normalize="auto", **options):
-    u"""
+    """
     Synthesize a FIR NTF based on an audio weighting function.
 
     The ΔΣ modulator NTF is designed after an audio weigthing function stating
@@ -268,7 +269,7 @@ def ntf_fir_audio_weighting(
     scipy.integrate.quad : for the meaning of the integrator parameters.
     cvxopt : for the optimizer parameters
     """
-    if not callable(audio_weighting):
+    if not isinstance(audio_weighting, collections.Callable):
         if audio_weighting == 'f':
             audio_weighting = audio_weightings.f_weighting
         elif audio_weighting == 'a':

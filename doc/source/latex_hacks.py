@@ -53,41 +53,41 @@ from docutils.statemachine import ViewList
 
 texescape.tex_replacements = [
     # map TeX special chars
-    (u'$', u'\\$'),
-    (u'%', u'\\%'),
-    (u'&', u'\\&'),
-    (u'#', u'\\#'),
-    (u'_', u'\\_'),
-    (u'{', u'\\{'),
-    (u'}', u'\\}'),
-    (u'[', u'{[}'),
-    (u']', u'{]}'),
-    (u'`', u'{}`'),
-    (u'\\', u'\\textbackslash{}'),
-    (u'~', u'\\textasciitilde{}'),
-    (u'<', u'\\textless{}'),
-    (u'>', u'\\textgreater{}'),
-    (u'^', u'\\textasciicircum{}'),
+    ('$', '\\$'),
+    ('%', '\\%'),
+    ('&', '\\&'),
+    ('#', '\\#'),
+    ('_', '\\_'),
+    ('{', '\\{'),
+    ('}', '\\}'),
+    ('[', '{[}'),
+    (']', '{]}'),
+    ('`', '{}`'),
+    ('\\', '\\textbackslash{}'),
+    ('~', '\\textasciitilde{}'),
+    ('<', '\\textless{}'),
+    ('>', '\\textgreater{}'),
+    ('^', '\\textasciicircum{}'),
     # map special Unicode characters to TeX commands
-    (u'¶', u'\\P{}'),
-    (u'§', u'\\S{}'),
-    (u'€', u'\\texteuro{}'),
-    (u'∞', u'\\(\\infty\\)'),
-    (u'±', u'\\(\\pm\\)'),
-    (u'→', u'\\(\\rightarrow\\)'),
-    (u'‣', u'\\(\\rightarrow\\)'),
+    ('¶', '\\P{}'),
+    ('§', '\\S{}'),
+    ('€', '\\texteuro{}'),
+    ('∞', '\\(\\infty\\)'),
+    ('±', '\\(\\pm\\)'),
+    ('→', '\\(\\rightarrow\\)'),
+    ('‣', '\\(\\rightarrow\\)'),
     # used to separate -- in options
-    (u'\ufeff', u'{}'),
+    ('\ufeff', '{}'),
     # map some special Unicode characters to similar ASCII ones
-    (u'─', u'-'),
-    (u'⎽', u'\\_'),
-    (u'╲', u'\\textbackslash{}'),
-    (u'|', u'\\textbar{}'),
-    (u'│', u'\\textbar{}'),
-    (u'ℯ', u'e'),
-    (u'ⅈ', u'i'),
-    (u'₁', u'1'),
-    (u'₂', u'2')]
+    ('─', '-'),
+    ('⎽', '\\_'),
+    ('╲', '\\textbackslash{}'),
+    ('|', '\\textbar{}'),
+    ('│', '\\textbar{}'),
+    ('ℯ', 'e'),
+    ('ⅈ', 'i'),
+    ('₁', '1'),
+    ('₂', '2')]
 
 latex.LaTeXTranslator.default_elements['longtable'] = (
     r'\usepackage{longtable}' + '\n' +
@@ -123,8 +123,8 @@ def depart_table(self, node):
         self.table.longtable = True
     self.body = self._body
     if not self.table.longtable and self.table.caption is not None:
-        self.body.append(u'\n\n\\begin{threeparttable}\n'
-                         u'\\capstart\\caption{%s}\n' % self.table.caption)
+        self.body.append('\n\n\\begin{threeparttable}\n'
+                         '\\capstart\\caption{%s}\n' % self.table.caption)
     if self.table.longtable:
         self.body.append('\n{\\tabulinesep=0.5ex%\n\\begin{longtabu}')
         endmacro = '\\end{longtabu}}\n\n'
@@ -151,7 +151,7 @@ def depart_table(self, node):
         else:
             self.body.append('{|' + ('L|' * self.table.colcount) + '}\n')
     if self.table.longtable and self.table.caption is not None:
-        self.body.append(u'\\caption{%s} \\\\\n' % self.table.caption)
+        self.body.append('\\caption{%s} \\\\\n' % self.table.caption)
     if self.table.caption is not None:
         for id in self.next_table_ids:
             self.body.append(self.hypertarget(id, anchor=False))

@@ -24,7 +24,7 @@ Implements a Distutils 'docdist' subcommand (create zipfile with html
 documentation).
 """
 
-from __future__ import print_function
+
 
 import os
 from distutils import dir_util

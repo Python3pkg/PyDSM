@@ -54,8 +54,7 @@ def norm_inf(X):
     z = variable(m,n)
     w = vstack([z])                 
     p = program(minimize(t),
-                list(map(lambda y: leq(sum(abs(y)),t),
-                    [w[i,:] for i in range(0,m)])),
+                list([leq(sum(abs(y)),t) for y in [w[i,:] for i in range(0,m)]]),
                 [z],
                 name='norm_inf')
     return p(X)

@@ -117,13 +117,13 @@ class cvxpy_list(list):
         # Variables
         if name == 'variables':
             all_vars = reduce(lambda x,y: x+y,
-                              list(map(lambda x: x.variables,self)),[])
+                              list([x.variables for x in self]),[])
             return cvxpy_list(set(all_vars))
 
         # Parameters
         elif name == 'parameters':
             all_params = reduce(lambda x,y: x+y,
-                                list(map(lambda x: x.parameters,self)),[])
+                                list([x.parameters for x in self]),[])
             return cvxpy_list(set(all_params))
 
         # Other
@@ -152,7 +152,7 @@ class cvxpy_list(list):
         Determines if all constraints are DCP-compliant.
         """
 
-        return all(list(map(lambda x:x.is_dcp(),self)))
+        return all(list([x.is_dcp() for x in self]))
 
     # Method: is_affine
     def is_affine(self):
@@ -160,7 +160,7 @@ class cvxpy_list(list):
         Determines if all constraints are affine.
         """
         
-        return all(list(map(lambda x:x.is_affine(),self)))
+        return all(list([x.is_affine() for x in self]))
         
     # Method: __add__
     def __add__(self,other):        

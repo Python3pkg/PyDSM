@@ -21,7 +21,7 @@
 
 # Following part is deprecated
 
-from __future__ import division, print_function
+
 
 from ..merit_factors import quantization_noise_gain
 from warnings import warn

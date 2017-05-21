@@ -18,7 +18,7 @@
 # You should have received a copy of the GNU General Public License
 # along with PyDSM.  If not, see <http://www.gnu.org/licenses/>.
 
-u"""
+"""
 Synthesis of the NTF of Delta Sigma modulators (:mod:`pydsm.NTFdesign`)
 =======================================================================
 

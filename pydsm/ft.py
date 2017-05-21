@@ -39,7 +39,7 @@ Functions
     idtft_hermitian -- IDTFT specialized to hermitian vectors
 """
 
-from __future__ import division, print_function
+
 
 import numpy as np
 import scipy as sp

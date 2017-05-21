@@ -46,14 +46,14 @@ def re_eval(arg,replace_map):
     
     # Scalar variable
     elif type(arg) is cvxpy_scalar_var:
-        if arg in replace_map.keys():
+        if arg in list(replace_map.keys()):
             return re_eval(replace_map[arg],replace_map)
         else:
             return arg
     
     # Scalar param
     elif type(arg) is cvxpy_scalar_param:
-        if arg in replace_map.keys():
+        if arg in list(replace_map.keys()):
             return re_eval(replace_map[arg],replace_map)
         else:
             return arg
@@ -62,7 +62,7 @@ def re_eval(arg,replace_map):
     elif (type(arg) is cvxpy_tree and 
           arg.item.type == OPERATOR and
           arg.item.name == SUMMATION):
-        new_children = list(map(lambda x:re_eval(x,replace_map),arg.children))
+        new_children = list([re_eval(x,replace_map) for x in arg.children])
         return sum(new_children)
 
     # Multiplication
@@ -76,7 +76,7 @@ def re_eval(arg,replace_map):
     # Function
     elif (type(arg) is cvxpy_tree and 
           arg.item.type == FUNCTION):
-        new_children = list(map(lambda x:re_eval(x,replace_map),arg.children))
+        new_children = list([re_eval(x,replace_map) for x in arg.children])
         return arg.item(new_children)
 
     # Constraint

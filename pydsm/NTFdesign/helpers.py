@@ -18,7 +18,7 @@
 # You should have received a copy of the GNU General Public License
 # along with PyDSM.  If not, see <http://www.gnu.org/licenses/>.
 
-u"""
+"""
 Helper functions for NTF design (:mod:`pydsm.NTFdesign.helpers`)
 ================================================================
 
@@ -39,7 +39,7 @@ Functions
 """
 
 
-from __future__ import division
+
 
 import numpy as np
 from scipy.optimize import minimize

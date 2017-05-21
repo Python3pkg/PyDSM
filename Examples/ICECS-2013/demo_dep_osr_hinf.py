@@ -34,7 +34,7 @@ All rights reserved.
 # In this conditions, the synthesised NTF fails to reach the max gain.
 # This does not affect the visualized trends, though.
 
-from __future__ import division, print_function
+
 
 import numpy as np
 from pydsm.delsig import (synthesizeNTF, ds_f1f2, dbp)

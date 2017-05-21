@@ -251,7 +251,7 @@ class cvxpy_program(object):
                 raise TypeError('Invalid replacement')
 
         # All numeric
-        if all(list(map(lambda x: type(x) is cvxpy_obj,args_upgraded))):
+        if all(list([type(x) is cvxpy_obj for x in args_upgraded])):
 
             # Create map and new program
             replace_map = {}

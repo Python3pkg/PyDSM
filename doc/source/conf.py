@@ -45,8 +45,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'PyDSM'
-copyright = u'2012-2014, Sergio Callegari'
+project = 'PyDSM'
+copyright = '2012-2014, Sergio Callegari'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -195,8 +195,8 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'PyDSM.tex', u'PyDSM Documentation',
-   u'Sergio Callegari', 'manual'),
+  ('index', 'PyDSM.tex', 'PyDSM Documentation',
+   'Sergio Callegari', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -225,8 +225,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'pydsm', u'PyDSM Documentation',
-     [u'Sergio Callegari'], 1)
+    ('index', 'pydsm', 'PyDSM Documentation',
+     ['Sergio Callegari'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -239,8 +239,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'PyDSM', u'PyDSM Documentation',
-   u'Sergio Callegari', 'PyDSM', 'One line description of project.',
+  ('index', 'PyDSM', 'PyDSM Documentation',
+   'Sergio Callegari', 'PyDSM', 'One line description of project.',
    'Miscellaneous'),
 ]
 

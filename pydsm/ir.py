@@ -38,7 +38,7 @@ Functions
     impulse_response  -- Compute impulse response of DT filter
 """
 
-from __future__ import division, print_function
+
 
 import numpy as np
 import scipy as sp

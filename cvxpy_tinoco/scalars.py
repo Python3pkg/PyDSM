@@ -509,12 +509,12 @@ class cvxpy_tree(cvxpy_obj):
         
         # Variables
         if name == 'variables':
-            l = list(map(lambda x: x.variables,self.children))
+            l = list([x.variables for x in self.children])
             return cvxpy_list(set(reduce(lambda x,y:x+y,l,[])))
         
         # Parameters
         elif name == 'parameters':
-            l = list(map(lambda x: x.parameters,self.children))
+            l = list([x.parameters for x in self.children])
             return cvxpy_list(set(reduce(lambda x,y:x+y,l,[])))
 
         # Value
@@ -523,7 +523,7 @@ class cvxpy_tree(cvxpy_obj):
             # Summation
             if (self.item.type == OPERATOR and 
                 self.item.name == SUMMATION):
-                return np.sum(list(map(lambda x:x.value,self.children)))
+                return np.sum(list([x.value for x in self.children]))
 
             # Multiplication
             elif (self.item.type == OPERATOR and 
@@ -532,7 +532,7 @@ class cvxpy_tree(cvxpy_obj):
 
             # Function
             elif self.item.type == FUNCTION:
-                return self.item(list(map(lambda x: x.value,self.children)))
+                return self.item(list([x.value for x in self.children]))
             
             # Error
             else:
@@ -590,7 +590,7 @@ class cvxpy_tree(cvxpy_obj):
         # Summation
         if (self.item.type == OPERATOR and
             self.item.name == SUMMATION):
-            return all(list(map(lambda x: x.is_convex(),self.children)))
+            return all(list([x.is_convex() for x in self.children]))
 
         # Multiplication
         elif (self.item.type == OPERATOR and 
@@ -621,7 +621,7 @@ class cvxpy_tree(cvxpy_obj):
         # Summation
         if (self.item.type == OPERATOR and 
             self.item.name == SUMMATION):
-            return all(list(map(lambda x: x.is_concave(),self.children)))
+            return all(list([x.is_concave() for x in self.children]))
 
         # Multiplication
         elif (self.item.type == OPERATOR and 
@@ -660,7 +660,7 @@ class cvxpy_tree(cvxpy_obj):
         # Summation
         if (self.item.type == OPERATOR and
             self.item.name == SUMMATION):
-            return all(list(map(lambda x: x.is_affine(),self.children)))
+            return all(list([x.is_affine() for x in self.children]))
 
         # Multiplication
         elif (self.item.type == OPERATOR and 
@@ -686,18 +686,15 @@ class cvxpy_tree(cvxpy_obj):
         # Summation
         if (self.item.type == OPERATOR and 
             self.item.name == SUMMATION):
-            return all(list(map(lambda x: x.is_nonnegative_constant(),
-                           self.children)))
+            return all(list([x.is_nonnegative_constant() for x in self.children]))
         
         # Multiplication
         elif (self.item.type == OPERATOR and 
               self.item.name == MULTIPLICATION):
             ob1 = self.children[0]
             ob2 = self.children[1]
-            both_nonneg = all(list(map(lambda x:x.is_nonnegative_constant(),
-                                  [ob1,ob2])))
-            both_nonpos = all(list(map(lambda x:x.is_nonpositive_constant(),
-                                  [ob1,ob2])))
+            both_nonneg = all(list([x.is_nonnegative_constant() for x in [ob1,ob2]]))
+            both_nonpos = all(list([x.is_nonpositive_constant() for x in [ob1,ob2]]))
             return both_nonneg or both_nonpos
 
         # Function
@@ -718,8 +715,7 @@ class cvxpy_tree(cvxpy_obj):
         # Summation
         if (self.item.type == OPERATOR and 
             self.item.name == SUMMATION):
-            return all(list(map(lambda x: x.is_nonpositive_constant(),
-                           self.children)))
+            return all(list([x.is_nonpositive_constant() for x in self.children]))
         
         # Multiplication
         elif (self.item.type == OPERATOR and 

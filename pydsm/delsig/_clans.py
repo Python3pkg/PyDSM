@@ -70,7 +70,7 @@ __all__ = ["clans"]
 
 
 def clans(order=4, osr=64, nq=5, rmax=0.95, opt=0, **options):
-    u"""Synthesize the NTF for a ΔΣM w/ multibit quantizer by the CLANS method.
+    """Synthesize the NTF for a ΔΣM w/ multibit quantizer by the CLANS method.
 
     This function is based on the CLANS method (Closed-Loop Analysis of Noise
     Shaping Coders) by J. G. Kenney and L. R. Carley, described in

@@ -53,7 +53,7 @@ __all__ = ['partitionABCD']
 
 
 def partitionABCD(ABCD, m=None):
-    u"""Partition ABCD ss description in A, B, C, D for an m-input sytem
+    """Partition ABCD ss description in A, B, C, D for an m-input sytem
 
     Parameters
     ----------

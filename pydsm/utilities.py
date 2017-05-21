@@ -56,7 +56,7 @@ Deprecated functions
    cplxpair  -- Alias for :func:`relab.cplxpair`
 """
 
-from __future__ import division, print_function
+
 
 import numpy as np
 from warnings import warn
