@@ -83,6 +83,7 @@ def get_git_version(abbrev=4, store=default_store):
     # First try to get the current version using “git describe”.
 
     version = call_git_describe(abbrev)
+    print("Git Version is :",version)
 
     # If that doesn't work, fall back on the value that's in
     # RELEASE-VERSION.
